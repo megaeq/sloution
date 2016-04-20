@@ -7,6 +7,16 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>career2 Maven Webapp</name>
   <url>http://maven.apache.org</url>
+  <properties>
+  	<guava.version>19.0</guava.version>
+  	<spring.version>4.2.1.RELEASE</spring.version>
+  	<spring.dao.version>2.0.8</spring.dao.version>
+  	<spring.data.version>1.10.1.RELEASE</spring.data.version>
+  	<mysql.version>6.0.2</mysql.version>
+  	<hibernate.version>5.1.0.Final</hibernate.version>
+  	<hiberbate.anotations.version>3.5.6-Final</hiberbate.anotations.version>
+  	<shiro.version>1.2.4</shiro.version>
+  </properties>
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -14,6 +24,116 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+    	<groupId>com.google.guava</groupId>
+    	<artifactId>guava</artifactId>
+    	<version>${guava.version}</version>
+    </dependency>
+    <!-- spring start -->
+    <dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-beans</artifactId>
+		<version>${spring.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-context</artifactId>
+		<version>${spring.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-core</artifactId>
+		<version>${spring.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-web</artifactId>
+		<version>${spring.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-webmvc</artifactId>
+		<version>${spring.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-aop</artifactId>
+		<version>${spring.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-aspects</artifactId>
+		<version>${spring.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-dao</artifactId>
+		<version>${spring.dao.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework.data</groupId>
+		<artifactId>spring-data-jpa</artifactId>
+		<version>${spring.data.version}</version>
+	</dependency>
+	<!-- spring end -->
+	<!-- mysql -->
+	<dependency>
+		<groupId>mysql</groupId>
+		<artifactId>mysql-connector-java</artifactId>
+		<version>${mysql.version}</version>
+	</dependency>
+	<!-- hibernate start -->
+	<dependency>
+		<groupId>org.hibernate</groupId>
+		<artifactId>hibernate-core</artifactId>
+		<version>${hibernate.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.hibernate</groupId>
+		<artifactId>hibernate-validator</artifactId>
+		<version>${hibernate.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.hibernate</groupId>
+		<artifactId>hibernate-entitymanager</artifactId>
+		<version>${hibernate.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.hibernate</groupId>
+		<artifactId>hibernate-annotations</artifactId>
+		<version>${hiberbate.anotations.version}</version>
+	</dependency>
+
+	<!-- hibernate end -->
+	<!-- shiro start -->
+	<dependency>
+		<groupId>org.apache.shiro</groupId>
+		<artifactId>shiro-core</artifactId>
+		<version>${shiro.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.apache.shiro</groupId>
+		<artifactId>shiro-web</artifactId>
+		<version>${shiro.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.apache.shiro</groupId>
+		<artifactId>shiro-spring</artifactId>
+		<version>${shiro.version}</version>
+	</dependency>
+	
+	<!-- shiro end -->
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+    
   </dependencies>
   <build>
     <finalName>career2</finalName>
