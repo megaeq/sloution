@@ -18,6 +18,7 @@
   	<hiberbate.anotations.version>3.5.6-Final</hiberbate.anotations.version>
   	<shiro.version>1.2.4</shiro.version>
   	<java.version>1.8</java.version>
+  	<dbcp.version>1.4</dbcp.version>
   </properties>
   <dependencies>
     <dependency>
@@ -100,9 +101,19 @@
 		<artifactId>hibernate-entitymanager</artifactId>
 		<version>${hibernate.version}</version>
 	</dependency>
-	<dependency>
+	<!-- <dependency>
 		<groupId>org.hibernate</groupId>
 		<artifactId>hibernate-annotations</artifactId>
+		<version>${hiberbate.anotations.version}</version>
+	</dependency> -->
+	 <dependency>
+      <groupId>org.hibernate.common</groupId>
+      <artifactId>hibernate-commons-annotations</artifactId>
+      <version>5.0.1.Final</version>
+     </dependency>
+	<dependency>
+		<groupId>org.hibernate</groupId>
+		<artifactId>hibernate-ehcache</artifactId>
 		<version>${hiberbate.anotations.version}</version>
 	</dependency>
 
@@ -125,6 +136,13 @@
 	</dependency>
 	
 	<!-- shiro end -->
+	<!-- dbcp -->
+	<dependency>
+		<groupId>commons-dbcp</groupId>
+		<artifactId>commons-dbcp</artifactId>
+		<version>${dbcp.version}</version>
+	</dependency>
+	
 
   </dependencies>
   <build>
