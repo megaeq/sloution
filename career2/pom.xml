@@ -8,9 +8,9 @@
   <name>career2 Maven Webapp</name>
   <url>http://maven.apache.org</url>
   <properties>
-  	<junit.version>3.8.1</junit.version>
+  	<junit.version>4.12</junit.version>
   	<guava.version>19.0</guava.version>
-  	<spring.version>4.2.1.RELEASE</spring.version>
+  	<spring.version>4.2.5.RELEASE</spring.version>
   	<spring.dao.version>2.0.8</spring.dao.version>
   	<spring.data.version>1.10.1.RELEASE</spring.data.version>
   	<mysql.version>6.0.2</mysql.version>
@@ -19,6 +19,7 @@
   	<shiro.version>1.2.4</shiro.version>
   	<java.version>1.8</java.version>
   	<dbcp.version>1.4</dbcp.version>
+  	<commons.logging.version>1.1.1</commons.logging.version>
   </properties>
   <dependencies>
     <dependency>
@@ -78,6 +79,18 @@
 		<artifactId>spring-data-jpa</artifactId>
 		<version>${spring.data.version}</version>
 	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-test</artifactId>
+		<version>${spring.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-tx</artifactId>
+		<version>${spring.version}</version>
+	</dependency>
+	
+	
 	<!-- spring end -->
 	<!-- mysql -->
 	<dependency>
@@ -143,6 +156,13 @@
 		<artifactId>commons-dbcp</artifactId>
 		<version>${dbcp.version}</version>
 	</dependency>
+	<!-- logging -->
+	<dependency>
+		<groupId>commons-logging</groupId>
+		<artifactId>commons-logging</artifactId>
+		<version>${commons.logging.version}</version>
+	</dependency>
+	
 	
 
   </dependencies>
@@ -168,4 +188,31 @@
 		</plugin>
 	</plugins>
   </build>
+  <repositories>  
+	    <repository>  
+	        <id>repo-mirror</id>  
+	        <name> Maven China Mirror</name>  
+	        <url>http://maven.oschina.net/content/groups/public/</url>  
+	        <releases>  
+	            <enabled>true</enabled>  
+	        </releases>  
+	        <snapshots>  
+	            <enabled>false</enabled>  
+	        </snapshots>  
+	    </repository>  
+	</repositories>  
+	  
+	<pluginRepositories>  
+	    <pluginRepository>  
+	        <id>plugin-repo-mirror</id>  
+	        <name> Maven China Mirror</name>  
+	        <url>http://maven.oschina.net/content/groups/public/</url>  
+	        <releases>  
+	            <enabled>true</enabled>  
+	        </releases>  
+	        <snapshots>  
+	            <enabled>false</enabled>  
+	        </snapshots>  
+	    </pluginRepository>  
+	</pluginRepositories>  
 </project>
