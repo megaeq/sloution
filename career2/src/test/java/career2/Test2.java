@@ -12,7 +12,7 @@ public class Test2 {
 	@BeforeClass
 	public static void init() {
 		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
-		userService = (UserService) context.getBean("accountService");
+		userService = (UserService) context.getBean("userService");
 	}
 	@Test
 	public void testUnit() {
