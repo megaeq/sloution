@@ -20,6 +20,10 @@
   	<java.version>1.8</java.version>
   	<dbcp.version>1.4</dbcp.version>
   	<commons.logging.version>1.1.1</commons.logging.version>
+  	<json.simple.version>1.1.1</json.simple.version>
+  	<web.lib.path>${project.basedir}/src/main/webapp/lib</web.lib.path>
+  	<commons.lang.version>2.6</commons.lang.version>
+  	<ezmorph.version>1.0.6</ezmorph.version>
   </properties>
   <dependencies>
     <dependency>
@@ -161,6 +165,25 @@
 		<groupId>commons-logging</groupId>
 		<artifactId>commons-logging</artifactId>
 		<version>${commons.logging.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>net.sf.json-lib</groupId>
+		<artifactId>json-lib</artifactId>
+		<version>2.4</version>
+		<scope>system</scope>
+      	<systemPath>${web.lib.path}/json-lib-2.4-jdk15.jar</systemPath>
+	</dependency>
+	<!-- common lang -->
+	<dependency>
+		<groupId>commons-lang</groupId>
+		<artifactId>commons-lang</artifactId>
+		<version>${commons.lang.version}</version>
+	</dependency>
+	<!-- ezmorph -->
+	<dependency>
+		<groupId>net.sf.ezmorph</groupId>
+		<artifactId>ezmorph</artifactId>
+		<version>${ezmorph.version}</version>
 	</dependency>
 	
 	
