@@ -16,6 +16,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import com.eq.dao.user.entity.User;
 import com.eq.dao.user.inte.IUser;
 import com.eq.service.UserService;
+import com.eq.util.JsonUtils;
 
 import net.sf.json.JSONObject;
 
@@ -40,7 +41,7 @@ public class UserTest {
 		Pageable pageable = new PageRequest(0, 2,sort);
 		
 		Page<User> page = iUser.findByUserName("mm", pageable);
-		System.out.println(JSONObject.fromObject(page).toString());
+		JsonUtils.prettyPrintedJson(page);
 	}
 	
 }
