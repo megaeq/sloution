@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.eq.dao.user.entity.User;
-import com.eq.dao.user.inte.UserImpl2;
+import com.eq.dao.user.inte.IUser;
 
 /**
  * @author wisdom
@@ -16,11 +16,11 @@ import com.eq.dao.user.inte.UserImpl2;
 @Component
 public class UserService {
 	@Autowired
-	private UserImpl2 userImpl;
+	private IUser iUser;
 	public void add() {
 		User user = new User();
 		user.setPassword("11");
 		user.setUserName("megaeq");
-		userImpl.save(user);
+		iUser.save(user);
 	}
 }
