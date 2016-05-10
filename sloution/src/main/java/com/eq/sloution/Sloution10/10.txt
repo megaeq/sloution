@@ -1,0 +1,7 @@
+Given a positive integer n, break it into the sum of at least two positive integers and maximize the product of those integers. Return the maximum product you can get.
+给定一个正整数n,将n分解成至少两个正整数，其中分解出来的数的和为n，求分解出来数的乘积最大值为多少
+For example, given n = 2, return 1 (2 = 1 + 1); given n = 10, return 36 (10 = 3 + 3 + 4).
+
+Note: you may assume that n is not less than 2.
+可以假定n>=2
+
