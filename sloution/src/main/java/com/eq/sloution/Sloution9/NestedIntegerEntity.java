@@ -11,32 +11,6 @@ public class NestedIntegerEntity implements NestedInteger
 	private List<Object> list = new ArrayList<Object>(); 
 	
 	
-	@Override
-	public boolean isInteger()
-	{
-		if(list.size()==1&&list.get(0) instanceof Integer) {
-			return true;
-		}
-		return false;
-	}
-
-	@Override
-	public Integer getInteger()
-	{
-		if(list.size()==1&&list.get(0) instanceof Integer) {
-			return (Integer)list.get(0);
-		}
-		return null;
-	}
-
-	@Override
-	public List<NestedInteger> getList()
-	{
-		for(Object obj:list) {
-			
-		}
-		return null;
-	}
 	
 	public List<Object> getList2() {
 		return list;
@@ -66,6 +40,21 @@ public class NestedIntegerEntity implements NestedInteger
 		ni2.add(3);
 		ni2.add(ni);
 		
+	}
+
+	public boolean isInteger() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public Integer getInteger() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public List<NestedInteger> getList() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

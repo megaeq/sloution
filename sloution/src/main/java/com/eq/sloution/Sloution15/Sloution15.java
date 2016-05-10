@@ -4,77 +4,77 @@ import java.util.List;
 import java.util.Map;
 
 import com.google.common.collect.Lists;
+import com.google.common.collect.Maps;
 
 public class Sloution15
 {
-	public static int rob(TreeNode root)
-	{
-
-		// 1
-		List<TreeNode> list1 = Lists.newArrayList();
-		getList(list1, root);
-		int i1 = 0;
-		for (TreeNode node : list1)
-		{
-			i1 += node.val;
+	
+	public int rob(TreeNode root) {
+		List<Map<String, Object>> list = Lists.newArrayList();
+		getList(list, root);
+		int max = 0;
+		for(Map<String, Object> map:list) {
+			if((Integer)map.get("total")>max){
+				max = (Integer)map.get("total");
+			}
 		}
-		// 2
-		List<TreeNode> list2 = Lists.newArrayList();
-		getList(list2, root.left);
-		List<TreeNode> list3 = Lists.newArrayList();
-		getList(list3, root.right);
-		int i2 = 0;
-		for (TreeNode node : list2)
-		{
-			i2 += node.val;
-		}
-		for (TreeNode node : list3)
-		{
-			i2 += node.val;
-		}
-		return i1 > i2 ? i1 : i2;
+		return max;
+	}
+	
+	private void getList(List<Map<String, Object>> list,Map<String, Object> map,TreeNode treeNode) {
+			if(list.isEmpty()) {
+				list = Lists.newArrayList();
+				Map<String, Object> param1 = Maps.newHashMap();
+				param1.put("last", 0);
+				param1.put("total",0);
+				list.add(param1);
+				Map<String, Object> param2 = Maps.newHashMap();
+				param2.put("last", 1);
+				param2.put("total",treeNode.val);
+				list.add(param2);
+				if(treeNode.left != null) {
+					getList(list, treeNode.left);
+				}
+				if(treeNode.right != null) {
+					getList(list, treeNode.right);
+				}
+				
+			} else {
+					if(map.get("last").toString().equals(0)) {
+						Map<String, Object> param1 = Maps.newHashMap();
+						param1.put("last", 0);
+						param1.put("total",map.get("total"));
+						list.add(param1);
+						Map<String, Object> param2 = Maps.newHashMap();
+						param2.put("last", 1);
+						param2.put("total",treeNode.val+(Integer)map.get("total"));
+						list.add(param2);
+						if(treeNode.left != null) {
+							getList(list, treeNode.left);
+						}
+						if(treeNode.right != null) {
+							getList(list, treeNode.right);
+						}
+					} else {
+						Map<String, Object> param1 = Maps.newHashMap();
+						param1.put("last", 0);
+						param1.put("total",map.get("total"));
+						list.add(param1);
+						if(treeNode.left != null) {
+							getList(list, treeNode.left);
+						}
+						if(treeNode.right != null) {
+							getList(list, treeNode.right);
+						}
+					}
+			}
 	}
 
-	private static void getList(List<TreeNode> list, TreeNode treeNode)
-	{
-		if(null != treeNode)
-		{
-			TreeNode parentNode = null;
-			for (int i = list.size() - 1; i > -1; i--)
-			{
-				TreeNode node = list.get(i);
-				if(node.left == treeNode)
-				{
-					parentNode = node;
-					break;
-				}
-				if(node.right == treeNode)
-				{
-					parentNode = node;
-					break;
-				}
-			}
-			if(parentNode != null)
-			{
-				if(!list.contains(parentNode))
-				{
-					list.add(treeNode);
-				}
-			}
-			else
-			{
-				list.add(treeNode);
-			}
-			getList(list, treeNode.left);
-			getList(list, treeNode.right);
-		}
-
-	}
 	
 	
 	public static void main(String[] args)
 	{
-		
+		Sloution15 sloution = new Sloution15();
 		TreeNode node1 = new TreeNode(3);
 		TreeNode node2 = new TreeNode(4);
 		TreeNode node3 = new TreeNode(12);
@@ -88,7 +88,7 @@ public class Sloution15
 		TreeNode node7 = new TreeNode(4);
 		node7.left = node3;
 		node7.right = node6;
-		System.out.println(Sloution15.rob(node7));
+		System.out.println(sloution.rob(node7));
 		
 		
 	}
