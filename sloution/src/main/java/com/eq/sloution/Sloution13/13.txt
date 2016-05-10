@@ -1,0 +1,4 @@
+Write a function that takes a string as input and returns the string reversed.
+写一个函数，将一个string输入，并将反转的String输出
+Example:
+Given s = "hello", return "olleh".
